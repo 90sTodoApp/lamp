@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/90sTodoApp/lamp/issues"
   },
-  "homepage": "https://github.com/90sTodoApp/lamp#readme"
+  "homepage": "https://github.com/90sTodoApp/lamp#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
