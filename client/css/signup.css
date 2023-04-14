@@ -1,0 +1,19 @@
+* {
+    text-decoration: none;
+}
+
+.mainContainer {
+    border: 2px solid red;
+    text-align: center;
+}
+
+.closeConatiner{
+    /* border: 2px solid #dffcf7; */
+    background-image: linear-gradient(to right, #ae8dfe,#7df3fe
+    )
+}
+
+#close {
+    /* border: 2px solid rgb(4, 0, 255); */
+    text-align: right;
+}
