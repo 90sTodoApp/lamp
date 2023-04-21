@@ -2,8 +2,9 @@ const express = require('express')
 const app = express()
 const PORT = 3000
 
+const routes = 
 app.get('/',(req,res) => {
-    res.send('Home Page')
+    res.json('Home Page')
 
 })
 
