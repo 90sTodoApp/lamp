@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-//const { Todos } = require('../models');
+const { Todo } = require('../models/todos');
 
 router.use(express.json())
 router.use(express.urlencoded({
@@ -11,7 +11,7 @@ router.use(express.urlencoded({
 router.get('/', async (req, res, next) => {
   try{
     const Todos = await Todo.findAll()
-    res.send(todos)
+    res.send(Todos)
   } catch (error) {
 
   }
