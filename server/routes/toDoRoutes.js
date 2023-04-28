@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const { Todo } = require('../models/todos');
+//const { Todo } = require('../models/todos');
+//const Sequelize = require('../db')
 
 router.use(express.json())
 router.use(express.urlencoded({
@@ -9,12 +10,15 @@ router.use(express.urlencoded({
 
 //GET TODOS (READ)
 router.get('/', async (req, res, next) => {
-  try{
-    const Todos = await Todo.findAll()
-    res.send(Todos)
-  } catch (error) {
+  //const todos = await Todo.findAll()
+  res.render('home.ejs')
 
-  }
+})
+
+//ADD TODOS (CREATE)
+router.post('/', async (req, res) => {
+    const addTodos = await Todo.create(req.body)  
+    res.send(addTodos)
 })
 
 //GET SINGLE TODOS (READ)
@@ -27,15 +31,7 @@ router.get('/:id', async (req, res, next) => {
   }
 })
 
-//ADD TODOS (CREATE)
-router.post('/', async (req, res, next) => {
-  try {
-    const addTodos = await Todos.create(req.body)  
-    res.send(addTodos)
-  } catch (error) {
-    next(error)  
-  }
-})
+
 
 //DELETE TODOS
 router.delete('/:id', async (req, res, next) =>{
