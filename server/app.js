@@ -2,9 +2,11 @@ const express = require('express')
 const app = express()
 const PORT = 3000
 
-const routes = 
+app.set('view engine', 'ejs')
+
+
 app.get('/',(req,res) => {
-    res.json('Home Page')
+    res.render('home.ejs')
 
 })
 
