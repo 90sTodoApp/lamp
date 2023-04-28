@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/90sTodoApp/lamp#readme",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "sequelize": "^6.31.0",
+    "sqlite3": "^5.1.6"
   }
 }
