@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const { Todo } = require('../models/todos');
-const Sequelize = require('../db')
+//const { Todo } = require('../models/todos');
+//const Sequelize = require('../db')
 
 router.use(express.json())
 router.use(express.urlencoded({
@@ -10,12 +10,9 @@ router.use(express.urlencoded({
 
 //GET TODOS (READ)
 router.get('/', async (req, res, next) => {
-  try{
-    const todos = await Todo.findAll()
-    res.send(todos)
-  } catch (error) {
+  //const todos = await Todo.findAll()
+  res.render('home.ejs')
 
-  }
 })
 
 //ADD TODOS (CREATE)
