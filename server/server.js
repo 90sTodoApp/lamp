@@ -3,7 +3,7 @@ const app = express();
 const PORT = process.env.PORT || 8080;
 const { sequelize } = require ('./db')
 
-const router = require('./routes/toDoRoutes')
+const router = require('./routes/todoRoutes')
 
 //const models = require("./server/models")
 
@@ -22,4 +22,4 @@ sequelize.sync(
   {force: false}
 );
   console.log("Server is ruuning on port" + PORT)
-})                    
+})
