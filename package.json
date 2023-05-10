@@ -4,7 +4,7 @@
   "description": "90s Retro Todo App",
   "main": "index.js",
   "scripts": {
-    "start": "node server/server.js",
+    "start": "node server/app.js",
     "test": "jest"
   },
   "repository": {
