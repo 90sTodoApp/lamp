@@ -4,7 +4,7 @@ const express = require('express');
 const app = express();
 const PORT = 3000
 const path = require('path');
-const authRouter = require('./routes/todoRoutes');
+const authRouter = require('./routes/toDoRoutes');
 const indexRouter = require('./routes/index');
 
 // added MAbe
