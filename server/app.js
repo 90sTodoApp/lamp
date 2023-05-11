@@ -2,7 +2,10 @@ require('dotenv').config()
 
 const express = require('express');
 const app = express();
-const PORT = 3000
+// const PORT = 3000
+
+// Use PORT provided in environment or default to 3000
+const port = process.env.PORT || 3000;
 const path = require('path');
 const authRouter = require('./routes/toDoRoutes');
 const indexRouter = require('./routes/index');
@@ -33,9 +36,14 @@ app.set('view engine', 'ejs');
 
 // app.use(router)
 
-app.listen(PORT, () => {
-    console.log(`LAMP is running on port ${PORT}`)
-})
+// app.listen(PORT, () => {
+//     console.log(`LAMP is running on port ${PORT}`)
+// })
+
+// Listen on `port` and 0.0.0.0
+app.listen(port, "0.0.0.0", function () {
+  // ...
+});
 
 
 // added Mabe
