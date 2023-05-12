@@ -1,0 +1,131 @@
+*{
+    font-family: 'vt323', monospace;
+}
+body {
+    background-image: url("https://static.vecteezy.com/system/resources/previews/008/628/239/original/geometric-background-in-80s-90s-style-memphis-pattern-of-geometric-shapes-circle-illustration-vector.jpg");
+    background-repeat: no-repeat;
+    background-size:cover;
+} 
+.header {
+    display: grid;
+    place-items: center;  
+    text-align: center;
+  }
+
+.title {
+    font-family: 'VT323',monospace;
+    font-weight: 800;
+    font-size: 8.5vw;
+    text-transform: uppercase;
+    text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black;
+    margin-bottom: 5px;
+    margin-top: 5px;
+  }
+h2{
+    color: white;
+    font-size: 5vh;
+    margin-top: 3px;
+    text-transform: uppercase;
+    text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black;
+}
+h1{
+    text-align: center;
+    margin-bottom: 0px;
+}
+.nav{
+    text-align: end;  
+    margin-right: 10px;
+}
+.logout{
+    border: hidden;
+    background-color: #c0c0c0;
+    font-size: 14px;
+    color: #1900ff;
+}
+.logout:hover{
+    color: #ff379b;
+}
+.todoapp{
+    background-color: #c0c0c0;
+    height: 50vh;
+    margin: auto;
+    width: 65vh;
+    padding: 2px;
+    border-radius: 2px;
+    box-shadow: 0px 0px 10px;
+    display: flex;
+    flex-direction: column;
+}
+.todoContainer{
+    background-color: white;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow: auto; /* enables scrolling */
+}
+.containerBanner{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1px;
+}
+.banner{
+    background-color: white;
+    margin-top: 20px;
+}
+.blueHeader{
+    background-color: #1300bb;
+    height: 2vh;
+    width:100% ;
+    color: white;
+}
+.title-word {
+    animation: color-animation 4s linear infinite;
+  }
+  
+  .title-word-1 {
+    --color-1: #1900ff;
+    --color-2: #ff379b;
+    --color-3: rgb(251, 255, 0);
+  }
+  
+  .title-word-2 {
+    --color-1: rgb(251, 255, 0);
+    --color-2: #1900ff;
+    --color-3: #ff379b;
+  }
+  
+  .title-word-3 {
+    --color-1: #ff379b;
+    --color-2: rgb(251, 255, 0);
+    --color-3: #30c1ff;
+  }
+  
+  .title-word-4 {
+    --color-1: rgb(0, 255, 0);
+    --color-2: #30c1ff;
+    --color-3: #1900ff;
+  }
+  
+  @keyframes color-animation {
+    0%    {color: var(--color-1)}
+    32%   {color: var(--color-1)}
+    33%   {color: var(--color-2)}
+    65%   {color: var(--color-2)}
+    66%   {color: var(--color-3)}
+    99%   {color: var(--color-3)}
+    100%  {color: var(--color-1)}
+  }
+.new-todo-form{
+    
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+.new-todo{
+  width: 50vw;  
+}
+.filters{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly
+}

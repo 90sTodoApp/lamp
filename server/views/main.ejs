@@ -4,40 +4,49 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="/css/main.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
 	</head>
 	<body>
-		<!-- how to use ejs:
-			https://ejs.co/
-			https://www.youtube.com/watch?v=k1ksrI6yQBQ&ab_channel=BukeddeTV
-			https://www.youtube.com/watch?v=XvOudqRsVW0&ab_channel=LearningPoints
-			https://www.youtube.com/watch?v=FhZj6aysmII&ab_channel=DeganKettles
-		-->
+		<div class="header">
+			<h2 class="title">
+			<span class="title-word title-word-1">L</span>
+			<span class="title-word title-word-2">A</span>
+			<span class="title-word title-word-3">M</span>
+			<span class="title-word title-word-4">P</span>
+			<h2>90's Todo List</h2>
+		</div>
+		
 		<section class="todoapp">
-			<nav class="nav">
-				<ul>
-					<li class="user"><%= user.name || user.username || user.email %></li>
+			<div class="containerBanner">
+				<div class="blueHeader">Welcome
+				</div>
+				<div class="nav">
+					Hello, <%= user.username %>
+					<form action="/logout" method="post">
+					<button class="logout" type="submit">Sign out</button>
+					</form>
+				</div>
+			</div>
+
+			<div class="todoContainer">
+				<h1>Your Todo List</h1>
+				<ul class="filters">
 					<li>
-						<form action="/logout" method="post">
-							<button class="logout" type="submit">Sign out</button>
-						</form>
+						<a <%- !filter ? 'class="selected"' : '' %> href="/">All</a>
 					</li>
-				</ul>
-			</nav>
-			<header class="header">
-				<h1>todos</h1>
-				<form action="/" method="post">
-					<input class="new-todo" name="title" placeholder="What needs to be done?" autofocus>
-					<% if (filter) { %>
-					<input type="hidden" name="filter" value="<%= filter %>"/>
-					<% } %>
-				</form>
-			</header>
+					<li>
+						<a <%- filter == 'active' ? 'class="selected"' : '' %> href="/active">Active</a>
+					</li>
+					<li>
+						<a <%- filter == 'completed' ? 'class="selected"' : '' %> href="/completed">Completed</a>
+					</li>
+				</ul>		
 			<% if (activeCount + completedCount > 0) { %>
 			<section class="main">
-				<form action="/toggle-all" method="post">
-					<input id="toggle-all" class="toggle-all" type="checkbox" name="completed" <%- activeCount == 0 ? 'checked' : '' %> onchange="this.form.submit();">
-					<label for="toggle-all">Mark all as complete</label>
-				</form>
+
+				
 				<ul class="todo-list">
 					<% todos.forEach(function(todo) { %>
 					<li <%- todo.completed ? 'class="completed"' : '' %>>
@@ -45,7 +54,7 @@
 							<div class="view">
 								<input class="toggle" type="checkbox" name="completed" <%- todo.completed ? 'checked' : '' %> onchange="this.form.submit();">
 								<label ondblclick="this.closest('li').className = this.closest('li').className + ' editing'; this.closest('li').querySelector('input.edit').focus(); this.closest('li').querySelector('input.edit').value = ''; this.closest('li').querySelector('input.edit').value = '<%= todo.title %>';"><%= todo.title %></label>
-								<button class="destroy" form="delete-<%= todo.id %>"></button>
+								<button class="destroy" form="delete-<%= todo.id %>">DELETE</button>
 							</div>
 							<input class="edit" name="title" value="<%= todo.title %>" onkeyup="if (event.keyCode == 27) { this.setAttribute('data-esc', ''); this.closest('li').className = this.closest('li').className.replace('editing', ''); }" onblur="if (this.getAttribute('data-esc') !== null) { return this.removeAttribute('data-esc'); } this.form.submit();">
 							<% if (filter) { %>
@@ -59,23 +68,15 @@
 						</form>
 					</li>
 					<% }); %>
-				</ul>
+				</ul>				<form action="/toggle-all" method="post">
+					<input id="toggle-all" class="toggle-all" type="checkbox" name="completed" <%- activeCount == 0 ? 'checked' : '' %> onchange="this.form.submit();">
+					<label for="toggle-all">Mark all as complete</label></form>
 			</section>
 			<% } %>
 			<% if (activeCount + completedCount > 0) { %>
 			<footer class="footer">
 				<span class="todo-count"><strong><%= activeCount %></strong> <%= pluralize('item', activeCount) %> left</span>
-				<ul class="filters">
-					<li>
-						<a <%- !filter ? 'class="selected"' : '' %> href="/">All</a>
-					</li>
-					<li>
-						<a <%- filter == 'active' ? 'class="selected"' : '' %> href="/active">Active</a>
-					</li>
-					<li>
-						<a <%- filter == 'completed' ? 'class="selected"' : '' %> href="/completed">Completed</a>
-					</li>
-				</ul>
+				
 				<% if (completedCount > 0) { %>
 				<form action="/clear-completed" method="post">
 					<button class="clear-completed">Clear completed</button>
@@ -86,6 +87,14 @@
 				<% } %>
 			</footer>
 			<% } %>
-		</section>
+		</div>
+		<form class="new-todo-form" action="/" method="post">
+			<input class="new-todo" name="title" placeholder="Add a todo item" autofocus>
+			<% if (filter) { %>
+			<input type="hidden" name="filter" value="<%= filter %>"/>
+			<% } %>
+			<button class="addTodo" type="submit">Add</button>
+		</form>
+			</section>
 	</body>
 </html>

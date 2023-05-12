@@ -1,0 +1,9 @@
+body {
+    background-image: url("https://static.vecteezy.com/system/resources/previews/008/628/239/original/geometric-background-in-80s-90s-style-memphis-pattern-of-geometric-shapes-circle-illustration-vector.jpg");
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+.grey-box{
+    background-color: rgb(179, 179, 179);
+    display: flex;
+}
