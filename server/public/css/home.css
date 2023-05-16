@@ -1,9 +1,87 @@
+*{
+    font-family: 'VT323',monospace;
+}
 body {
     background-image: url("https://static.vecteezy.com/system/resources/previews/008/628/239/original/geometric-background-in-80s-90s-style-memphis-pattern-of-geometric-shapes-circle-illustration-vector.jpg");
     background-repeat: no-repeat;
     background-size:cover;
 }
-.grey-box{
-    background-color: rgb(179, 179, 179);
+.title-word {
+    animation: color-animation 4s linear infinite;
+  }
+  
+  .title-word-1 {
+    --color-1: #1900ff;
+    --color-2: #ff379b;
+    --color-3: rgb(251, 255, 0);
+  }
+  
+  .title-word-2 {
+    --color-1: rgb(251, 255, 0);
+    --color-2: #1900ff;
+    --color-3: #ff379b;
+  }
+  
+  .title-word-3 {
+    --color-1: #ff379b;
+    --color-2: rgb(251, 255, 0);
+    --color-3: #30c1ff;
+  }
+  
+  .title-word-4 {
+    --color-1: rgb(0, 255, 0);
+    --color-2: #30c1ff;
+    --color-3: #1900ff;
+  }
+  
+  @keyframes color-animation {
+    0%    {color: var(--color-1)}
+    32%   {color: var(--color-1)}
+    33%   {color: var(--color-2)}
+    65%   {color: var(--color-2)}
+    66%   {color: var(--color-3)}
+    99%   {color: var(--color-3)}
+    100%  {color: var(--color-1)}
+  }
+  .title {
+    font-family: 'VT323',monospace;
+    font-weight: 800;
+    font-size: 15vw;
+    text-transform: uppercase;
+    text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    justify-content: center;
+  }
+h2{
+    color: white;
+    font-size: 10vh;
+    margin-top: 3px;
+    text-transform: uppercase;
+    text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black;
+}
+section{
+    background: rgba(18, 20, 74, 0.623);
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    width: max-content;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    padding: 5px;
+    margin-top: 200px;
+}
+a{
+    font-size: 5vh;
+    background-color: #c0c0c0;
+    border: 2px solid black;
+    padding: 5px;
+    color: black;
+}
+a:visited{
+    color: darkblue
+}
+a:hover{
+    font-size: 7vh;
+    color: #ff379b;
 }
